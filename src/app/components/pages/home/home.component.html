@@ -1,0 +1,45 @@
+<!----<ul>
+    <li  *ngFor="let food of foods">
+        <a routerLink="/foods/{{food.id}}"></a>--->
+       <!-------<img [src]="food.image.Url" [alt]="food.name"/>--> 
+        <!------- <div>
+            {{food.name}}
+        </div>
+    </li>
+</ul>-
+--->
+<div class="container">
+<div class="item" *ngFor="let food of foods">
+    <p-card header="{{food.name}}" subheader="{{food.origins[0]}} {{food.origins[1]}}" [style]="{ width: '360px' }">
+       
+        <ng-template pTemplate="header">
+            <a routerLink="/foods/{{food.id}}">
+            <img [src]="food.imageUrl" [alt]="food.name"/>
+            </a>
+        </ng-template>
+   <div>
+    <p-rating [(ngModel)]="food.starts" [cancel]="false" [readonly]="true"></p-rating>
+    <p-tag [value]="food.inventoryStatus" severity="getSeverity(food)"></p-tag>
+
+   </div>
+   
+    <div class="cook-time">
+        <span>⏱ </span>{{food.cookTime}}
+        <div class="flex align-items-center gap-3">
+            <span class="flex align-items-center gap-2">
+                <i class="pi pi-tag"></i>
+            </span>
+        </div>
+    </div>
+    <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+        <span class="text-2xl font-semibold">{{  food.price | currency }}</span>
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
+        quas!
+    </p>
+</p-card>
+</div>
+</div>
+
+    
