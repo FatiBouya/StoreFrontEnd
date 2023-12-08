@@ -1,0 +1,30 @@
+
+<p-card  class="container" header="{{food.name}}" >
+     <div id="image">
+        <img [src]="food.imageUrl" [alt]="food.name"/>
+     </div>
+   
+    <div class="details">
+       
+        <div class="header">
+           
+            <div  class="discription">   {{food.favorite}} <!---food.details or discription-->    Couscous is a North African dish made from tiny steamed balls of semolina flour. Though we think of it and cook it as a grain, it is actually a type of pasta. Traditional couscous is steamed in a special double-chambered cooking vessel called a couscousière. It is a multi-step, time-consuming process
+            </div>
+            <div class="cook-time">
+                <span>Time to cook about <strong>{{food.cookTime}}</strong> minutes  </span>
+            </div>
+        <a *ngFor="let orgin of food.origins">{{orgin }} </a><br>
+            <p-rating [(ngModel)]="food.starts" [cancel]="false" [readonly]="true"></p-rating>
+            <p-tag [value]="food.inventoryStatus" severity="getSeverity(food)"></p-tag> <br>
+            
+        </div>
+      
+        <div class="price">
+            {{food.price | currency}}
+           
+        </div><br>
+        <p-button label="add to cart" [rounded]="true" severity="warning"></p-button>
+
+    </div>
+</p-card>
+

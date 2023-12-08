@@ -1,0 +1,76 @@
+ 
+.container
+{
+    margin-top: 5rem;
+   width: 100rem;
+    justify-content: center !important; /*the position  of container is the cente    */
+    display: flex;
+    flex-wrap: wrap;
+   
+  
+
+    text-align: center;
+    position: relative;
+    
+}
+.container > *{
+    min-width: 25rem;
+    max-width: 40rem;
+}
+img{
+   /* float: left; 
+    border-radius: 3rem;
+    flex: 1 0;
+    object-fit: cover;
+   */ 
+    float: left;
+    width: 40rem;
+    height: 30rem;
+    
+}
+.details{
+
+    display: inline-block;
+
+}
+.header{
+
+  
+
+    display: inline-block;
+    width: 40rem;
+    /*background: #c0feee;*/
+}
+.discription{
+    margin-top: 2rem;
+
+}
+p-tag{
+    margin-left: 5rem;
+}
+.cook-time strong{
+    color: orangered;
+}
+
+#container2 {
+    text-align: center;
+    position: relative;
+  }
+  #container2:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    height: 200%;
+    width: 1px;
+ 
+  }
+  #container2 > .first {
+    float: left;
+    width: 100px;
+    background: #bada55;
+  }
+  #container2 > .second {
+    display: inline-block;
+    width: 100px;
+    background: #c0feee;
+  }
