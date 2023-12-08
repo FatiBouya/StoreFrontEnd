@@ -22,6 +22,11 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import {BadgeModule} from 'primeng/badge';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { TieredMenuModule } from 'primeng/tieredmenu';
+import { RatingModule } from 'primeng/rating';
+import { TagModule } from 'primeng/tag';
+
+
+
 const primeNgComponents=[
   ConfirmDialogModule,
   ButtonModule,
@@ -47,6 +52,8 @@ const primeNgComponents=[
   BadgeModule,
   MultiSelectModule,
   TieredMenuModule,
+  RatingModule,
+  TagModule
 ]
 @NgModule({
   declarations: [],
