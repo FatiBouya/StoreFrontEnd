@@ -1,6 +1,7 @@
 import { Component , OnInit} from '@angular/core';
 import { Food } from '../../../shared/models/Food';
 import { FoodService } from '../../../services/food.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,11 +12,18 @@ export class HomeComponent implements OnInit{
 
 
   foods :Food[]=[];
-  constructor(private foodService: FoodService){
+  constructor(private foodService: FoodService, activatedRoute: ActivatedRoute){
+    activatedRoute.params.subscribe((params)=>{
+      if(params.searchName)
+    {
+      this.foods=this.foodService.getSearchFoodsByname(params.searchName)
+    }
+  else{
     this.foods= foodService.getAll();
-    console.log(this.foods)
+
+  }})
+    
   }
-  name: 'success' | 'info' | 'warning' | 'error' | undefined
 
   getSeverity(food: Food) {
     switch (food.inventoryStatus) {
